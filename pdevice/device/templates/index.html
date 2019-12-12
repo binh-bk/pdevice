@@ -1,0 +1,13 @@
+{% extends 'base.html' %} {% block content %}
+<div class="container">
+  {% for device in recent_device %}
+  <ul>
+    <a href="{% url 'device:detail' device_pk}">{{device.name}}</a>
+    <li>{{device.pk}}</li>
+    <li>{{device.aid}}</li>
+  </ul>
+
+  {% endfor %}
+</div>
+
+{% endblock content %}

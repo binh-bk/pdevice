@@ -1,0 +1,15 @@
+{% extends 'base.html' %} 
+{% block content %}
+<div class="container">
+  <h1>Details</h1>
+    <h3>{{device.name}}</h3>
+    <h3>{{device.aid}}</h3>
+    <li>{{device.city}} </li>
+    <li>{{device.lon}} </li>
+    <li>{{device.lat}} </li>
+    <li>{{device.operated}} </li>
+    <li>{{device.updated}} </li>
+    <li>{{device.author}} </li>
+</div>
+
+{% endblock content %}

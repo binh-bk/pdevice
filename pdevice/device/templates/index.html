@@ -3,7 +3,7 @@
 <div class="container">
   {% for device in recent_device %}
   <ul>
-    <a href="{% url 'device:detail' device.pk %}">{{device.name}}</a>
+    <a href="{% url 'device:device-detail' device.pk %}">{{device.name}}</a>
   </ul>
 
   {% endfor %}

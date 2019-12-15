@@ -4,9 +4,17 @@ from . import views
 app_name = 'device'
 
 urlpatterns = [
-    path('', views.index, name='index'),
-    path('<int:device_id>/detail/', views.detail, name='detail'),
-    path('<int:device_id>/update/', views.update, name='update'),
-    path('sample/', views.sample, name='sample'),
-    path('home2/', views.HomePageView.as_view(), name='home2'),
+    path('', views.index, name='device-index'),
+    # path('<int:device_id>/detail/', views.detail, name='detail'),
+    path('<int:pk>/',
+         views.DeviceDetailView.as_view(), name='device-detail'),
+    path('new/',
+         views.DeviceCreateView.as_view(), name='device-create'),
+    path('<int:pk>/update/',
+         views.DeviceUpdateView.as_view(), name='device-update'),
+    path('<int:pk>/delete',
+         views.DeviceDeleteView.as_view(), name='device-delete'),
+    path('sample/', views.sample, name='device-sample'),
+    path('home2/', views.HomePageView.as_view(), name='device-home2'),
+    path('home3/', views.DevicePageView.as_view(), name='device-home3')
 ]

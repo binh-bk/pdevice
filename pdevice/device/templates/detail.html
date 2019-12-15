@@ -4,6 +4,7 @@
   <h1>Details</h1>
   <h3>Name: {{device.name}}</h3>
   <h3>Primary Key: {{device.pk}}</h3>
+  <h3>ID (ordering): {{device.id}}</h3>
   <h3>Arduino: {{device.aid}}</h3>
   <li>City: {{device.city}}</li>
   <li>Latitude: {{device.lon}}</li>
@@ -11,7 +12,9 @@
   <li>Operated from: {{device.operated}}</li>
 </div>
 <div>
-  <h2><a href="{% url 'device:index'%}">Index Page</a></h2>
+  <h2><a href="{% url 'device:device-index' %}">Index Page</a></h2>
+  <h2><a href="{% url 'device:device-update' device.pk %}">Update</a></h2>
+  <h2><a href="{% url 'device:device-delete' device.pk %}">Delete</a></h2>
 </div>
 
 {% endblock content %}

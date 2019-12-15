@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div>
+    <form method="post">
+        {% csrf_token %}
+        <h2>Are you sure to delete?</h2>
+        <h3> Station: {{device.name}}</h3>
+        <button type="submit">Yes, Delete</button>
+        <a  href="{% url 'device:device-detail' device.id %}">Cancel</a>
+    </form>
+</div>
+<div>
+    <h2><a href="{% url 'device:device-index' %}">Index Page</a></h2>
+</div>
+
+
+{% endblock content %}

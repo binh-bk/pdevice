@@ -1,0 +1,25 @@
+{% load crispy_forms_tags %} 
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Date Field Experiment</title>
+  </head>
+  <body>
+    <div style="text-align: center; margin-top: 100px">
+      <h2>Date Picker</h2>
+      <!-- <input type="date" /> -->
+
+      {{ example_form.my_date_field }}
+      <p>Intended as a blank line</p>
+      <form method="POST">
+        {% csrf_token %}
+        <input name="start" type="date" />
+        <input name="end" type="date" />
+        <button type="submit">Post</button>
+      </form>
+    </div>
+  </body>
+</html>

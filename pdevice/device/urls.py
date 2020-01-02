@@ -16,5 +16,9 @@ urlpatterns = [
          views.DeviceDeleteView.as_view(), name='device-delete'),
     path('sample/', views.sample, name='device-sample'),
     path('home2/', views.HomePageView.as_view(), name='device-home2'),
-    path('home3/', views.DevicePageView.as_view(), name='device-home3')
+    path('home3/', views.DevicePageView.as_view(), name='device-home3'),
+    path('java/', views.javatest, name='java'),
+    path('datetime/', views.datepick2, name='datepick'),
+    path('datetime/post', views.get_datepick2, name='get_datepick2'),
+    path('display/', views.display_date, name='display'),
 ]

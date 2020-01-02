@@ -1,16 +1,47 @@
 {% extends 'base.html' %}
-{% load crispy_forms_tags %}
+{% load crispy_forms_tags %} 
+    <!-- XDSoft DateTimePicker -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.min.css"
+      integrity="sha256-DOS9W6NR+NFe1fUhEE0PGKY/fubbUCnOfTje2JMDw3Y="
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.full.min.js"
+      integrity="sha256-FEqEelWI3WouFOo2VWP/uJfs1y8KJ++FLh2Lbqc8SJk="
+      crossorigin="anonymous"
+    ></script>
 
-{% block content %}
-<div>
-    <form method="post">
-        {% csrf_token %}
-        <h2>Add new device</h2>
-        {{ form|crispy }}
-        <button type="submit">Submit</button>
-    </form>
 
+{% block content %} 
+
+
+
+{% load bootstrap4 %} 
+{% bootstrap_css %} 
+{% bootstrap_javascript jquery='full' %}
+{{ form.media }}
+<div class='container-fluid w-50 p-3'>
+  <form method="post">  {% csrf_token %}
+    <h2>Add new device</h2>
+    <!-- {% bootstrap_form form %}  -->
+    {{ form.as_table }}
+    {% buttons %}
+    <button type="submit" class="btn btn-primary">Save</button>
+    {% endbuttons %}
+    <!-- <button type="submit">Submit</button> -->
+  </form>
 </div>
-
-
+<div class='container-fluid w-50 p-3'>
+  <p>Place holder for datetime picker</p>
+  <input id="id_date" type="text" />
+</div>
+<script>
+  $(function() {
+    $("#id_date").datetimepicker({
+      format: "d/m/Y H:i"
+    });
+  });
+</script>
 {% endblock content %}

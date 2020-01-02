@@ -1,5 +1,9 @@
-{% extends 'base.html' %} {% block content %}
+{% extends 'base.html' %} {% block content %} {% load bootstrap4 %} 
+{%bootstrap_css %} 
+{% bootstrap_javascript jquery='full' %} 
+{{ form.OperatedForm }}
 <div class="container">
+  <h1>Update View</h1>
   <h1>Details</h1>
   <h3>Name: {{device.name}}</h3>
   <h3>Primary Key: {{device.pk}}</h3>
